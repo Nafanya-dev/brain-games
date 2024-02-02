@@ -6,7 +6,7 @@ cycle_counter = 3
 def play(game):
     print('Welcome to the Brain Games!')
     name = prompt.string("May I have your name? ")
-    print(f'Hello {name}!')
+    print(f'Hello, {name}!')
     print(game.RULE)
     for _ in range(cycle_counter):
         question, right_answer = game.data()
