@@ -3,17 +3,37 @@ from random import randint
 RULE = "What number is missing in the progression?"
 
 
-def data():
-    first_num = str(randint(1, 100))
-    stride_length = randint(2, 10)
-    number_position = randint(0, 9)
-    progression = [first_num]
+def get_progression():
+    MIN_INITIAL_RANGE = 1
+    MAX_INITIAL_RANGE = 100
+    MIN_DIFF = 2
+    MAX_DIFF = 10
+
+    first_term = str(randint(MIN_INITIAL_RANGE, MAX_INITIAL_RANGE))
+    diff = randint(MIN_DIFF, MAX_DIFF)
+    progression = [first_term]
 
     while len(progression) < 10:
-        progression.append(str(int(progression[-1]) + stride_length))
+        progression.append(str(int(progression[-1]) + diff))
+    return progression
 
-    right_answer = progression[number_position]
+
+def get_question_string(progression_list, number_position):
+    progression = progression_list[:]
     progression[number_position] = '..'
-    question = ' '.join(progression)
+    return ' '.join(progression), progression_list[number_position]
 
+
+def get_num_position():
+    START_POSITION = 0
+    END_POSITION = 9
+    return randint(START_POSITION, END_POSITION)
+
+
+def round_data(random_progression=get_progression,
+               number_position=get_num_position):
+    progression = random_progression()
+    position = number_position()
+    question, right_answer = get_question_string(progression,
+                                                 position)
     return question, right_answer

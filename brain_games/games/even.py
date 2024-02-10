@@ -3,8 +3,14 @@ from random import randint
 RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def data():
-    question = randint(1, 100)
+def get_random_number():
+    START_RANGE = 1
+    END_RANGE = 100
+    return randint(START_RANGE, END_RANGE)
+
+
+def round_data(num=get_random_number):
+    question = num()
     right_answer = 'yes'
     if question % 2 != 0:
         right_answer = 'no'

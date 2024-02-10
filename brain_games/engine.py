@@ -1,15 +1,14 @@
 import prompt
 
-cycle_counter = 3
-
 
 def play(game):
+    number_of_rounds = 3
     print('Welcome to the Brain Games!')
     name = prompt.string("May I have your name? ")
     print(f'Hello, {name}!')
     print(game.RULE)
-    for _ in range(cycle_counter):
-        question, right_answer = game.data()
+    for _ in range(number_of_rounds):
+        question, right_answer = game.round_data()
         print(f"Question: {question}")
         user_answer = prompt.string("Yuor answer: ")
         if right_answer == user_answer:

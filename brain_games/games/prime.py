@@ -13,8 +13,14 @@ def is_prime(num, i=2):
     return is_prime(num, i + 1)
 
 
-def data():
-    question = randint(1, 50)
+def get_random_number():
+    START_RANGE = 1
+    END_RANGE = 50
+    return randint(START_RANGE, END_RANGE)
+
+
+def round_data(num=get_random_number):
+    question = num()
     right_answer = 'yes' if is_prime(question) else 'no'
 
     return question, right_answer
