@@ -19,8 +19,12 @@ def get_random_number():
     return randint(START_RANGE, END_RANGE)
 
 
-def round_data(num=get_random_number):
-    question = num()
+def get_arguments():
+    return (get_random_number(),)
+
+
+def round_data(num):
+    question = num
     right_answer = 'yes' if is_prime(question) else 'no'
 
     return question, right_answer

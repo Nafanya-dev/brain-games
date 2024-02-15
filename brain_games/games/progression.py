@@ -30,10 +30,12 @@ def get_num_position():
     return randint(START_POSITION, END_POSITION)
 
 
-def round_data(random_progression=get_progression,
-               number_position=get_num_position):
-    progression = random_progression()
-    position = number_position()
+def get_arguments():
+    return (get_progression(), get_num_position())
+
+
+def round_data(progression,
+               position):
     question, right_answer = get_question_string(progression,
                                                  position)
     return question, right_answer
