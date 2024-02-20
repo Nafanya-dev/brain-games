@@ -20,9 +20,9 @@ def get_arguments():
     return (get_random_num(), get_random_num(), get_random_operator())
 
 
-def round_data(first_num,
-               second_num,
-               operator):
+def get_round(first_num,
+              second_num,
+              operator):
     first_operand = str(first_num)
     second_operand = str(second_num)
 

@@ -8,8 +8,8 @@ def play(game):
     print(f'Hello, {name}!')
     print(game.RULE)
     for _ in range(number_of_rounds):
-        ARGUMENTS = game.get_arguments()
-        question, right_answer = game.round_data(*ARGUMENTS)
+        arguments = game.get_arguments()
+        question, right_answer = game.get_round(*arguments)
         print(f"Question: {question}")
         user_answer = prompt.string("Yuor answer: ")
         if right_answer == user_answer:

@@ -23,7 +23,7 @@ def get_arguments():
     return (get_random_number(),)
 
 
-def round_data(num):
+def get_round(num):
     question = num
     right_answer = 'yes' if is_prime(question) else 'no'
 
