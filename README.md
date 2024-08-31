@@ -38,7 +38,7 @@ The project uses the Poetry dependency manager. To install Poetry use its [offic
 To use the package, you need to clone the repository to your computer. This is done using the ```git clone``` command. Clone the project:
 
 ```bash
->> git clone https://github.com/Nafanya-dev/python-project-49.git
+>> git clone https://github.com/Nafanya-dev/brain-games.git && cd brain-games
 ```
 
 Then you have to build the package and install it:
